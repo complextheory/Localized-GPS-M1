@@ -39,7 +39,8 @@ public class MarkerPositioning : MonoBehaviour {
 			// change color and render
 			img.color=col;
 			rend.material.color = col;
-		}
-		
+		}	
 	}
+
+
 }

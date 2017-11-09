@@ -66,6 +66,7 @@
      <Compile Include="Assets\@My Scripts\rotateClouds.cs" />
      <Compile Include="Assets\@My Scripts\timeLight.cs" />
      <Compile Include="Assets\@My Scripts\touchInput.cs" />
+     <Compile Include="Assets\PointerLocation.cs" />
      <None Include="Assets\@My Shaders\EarthShader.shader" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
