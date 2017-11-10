@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class City {
 
-	public string city;
+	public string name;
 	public string city_ascii;
 	public float lat;
 	public float lng;

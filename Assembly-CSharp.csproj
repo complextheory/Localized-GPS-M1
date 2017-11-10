@@ -60,13 +60,14 @@
      <Compile Include="Assets\@My Scripts\LatitudeLong.cs" />
      <Compile Include="Assets\@My Scripts\LatLong.cs" />
      <Compile Include="Assets\@My Scripts\LatLongReal.cs" />
-     <Compile Include="Assets\@My Scripts\LoadCityData.cs" />
+     <Compile Include="Assets\@My Scripts\LoadCountryData.cs" />
      <Compile Include="Assets\@My Scripts\MarkerPositioning.cs" />
      <Compile Include="Assets\@My Scripts\MultipleLocalization.cs" />
+     <Compile Include="Assets\@My Scripts\PointerLocation.cs" />
      <Compile Include="Assets\@My Scripts\rotateClouds.cs" />
      <Compile Include="Assets\@My Scripts\timeLight.cs" />
      <Compile Include="Assets\@My Scripts\touchInput.cs" />
-     <Compile Include="Assets\PointerLocation.cs" />
+     <Compile Include="Assets\@My Scripts\XMLManager.cs" />
      <None Include="Assets\@My Shaders\EarthShader.shader" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
