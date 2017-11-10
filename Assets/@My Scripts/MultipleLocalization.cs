@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 
+// Analysis disable CheckNamespace
 public class MultipleLocalization : MonoBehaviour {
+// Analysis restore CheckNamespace
 	
 
 	// number of markers and their latitute and longitude
@@ -28,7 +30,7 @@ public class MultipleLocalization : MonoBehaviour {
 //		LoadCountryData countryData = dataLoader.GetComponent<LoadCountryData> ();
 
 
-		foreach (UserEntry user in XMLManager.ins.userDb.list) {
+		//foreach (UserEntry user in XMLManager.ins.userDb.list) {
 
 
 			// for each connected player add the marker at the LATitude and LONgitude
@@ -51,7 +53,7 @@ public class MultipleLocalization : MonoBehaviour {
 			//}
 
 
-		}
+		//}
 	}
 
 

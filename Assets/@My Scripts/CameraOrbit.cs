@@ -1,81 +1,62 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class CameraOrbit : MonoBehaviour {
+    public float MinDistance = 1.0f;
+    public float MaxDistance = 1.3f;
+    float distance= 1000;
+    float distanceTarget;
+    Vector2 mouse ;
+    Vector2 mouseOnDown ;
+    Vector2 rotation;
+    Vector2 target =new Vector2(Mathf.PI* 3 / 2, Mathf.PI / 6 );
+    Vector2 targetOnDown ;
+    // Use this for initialization
+    void Start () {
+        distanceTarget = transform.position.magnitude;
 
-	private Transform cameraTransform;
-	private Transform pivotTransform;
-
-	private Vector3 localRotation;
-	private float cameraDistance = 5f;
-
-	public float mouseSensitivity = 4f;
-	public float scrollSensitivity = 2f;
-	public float orbitDampening = 10f;
-	public float scrollDampening = 6f;
-
-	public bool cameraDisabled = false;
-
-	// Use this for initialization
-	void Start () {
-		cameraTransform = this.transform;
-		pivotTransform = this.transform.parent;
 	}
+    bool down = false;
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            down = true;
+            mouseOnDown.x = Input.mousePosition.x;
+            mouseOnDown.y = -Input.mousePosition.y;
 
+            targetOnDown.x = target.x;
+            targetOnDown.y = target.y;
+        }
+        else if(Input.GetMouseButtonUp(0))
+        {
+            down = false;
+        }
+        if(down)
+        {
+            mouse.x = Input.mousePosition.x;
+            mouse.y = -Input.mousePosition.y;
 
-	bool down = false;
-	
-	// LateUpdate is called after update so that it is the last thing to happen in the scene
-	void LateUpdate () {
+            float zoomDamp = distance / 1;
 
-		if (Input.GetKeyDown (KeyCode.LeftShift))
-			cameraDisabled = !cameraDisabled;
+            target.x = targetOnDown.x + (mouse.x - mouseOnDown.x) * 0.005f* zoomDamp;
+            target.y = targetOnDown.y + (mouse.y - mouseOnDown.y) * 0.005f* zoomDamp;
+            
+            target.y = Mathf.Clamp(target.y, -Mathf.PI / 2 + 0.01f, Mathf.PI / 2 - 0.01f);
+        }
 
-		if(!cameraDisabled){
+        distanceTarget -= Input.GetAxis("Mouse ScrollWheel");
+        distanceTarget = Mathf.Clamp(distanceTarget, MinDistance, MaxDistance);
 
-//			if (Input.GetMouseButtonDown (0)) {
-//				down = true;
-//				localRotation.x += Input.GetAxis ("Mouse X") * mouseSensitivity;
-//				localRotation.y -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
-//				
-//				localRotation.y = Mathf.Clamp (localRotation.y, -90f, 90f);
-//			}
-//
-//			else if(Input.GetMouseButtonUp(0))
-//			{
-//				down = false;
-//			}
-
-			//Rotation of camera based on mouse coordinates
-			if(Input.GetAxis ("Mouse X") != 0 || Input.GetAxis ("Mouse Y") != 0){
-
-				localRotation.x += Input.GetAxis ("Mouse X") * mouseSensitivity;
-				localRotation.y -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
-
-				localRotation.y = Mathf.Clamp (localRotation.y, -90f, 90f);
-
-			}
-			//Scrolling Input from the mouse scroll wheel
-			if(Input.GetAxis ("Mouse ScrollWheel") != 0f){
-			//if(Input.GetAxis ("Vertical") != 0f){
-				float ScrollAmount = Input.GetAxis ("Mouse ScrollWheel") * scrollSensitivity;
-				//float ScrollAmount = Input.GetAxis ("Vertical") * scrollSensitivity;
-				ScrollAmount *= (this.cameraDistance * 0.3f);
-
-				this.cameraDistance += ScrollAmount * -1f;
-				//Makes sure the camera will go no closer than 1.5 meters and farther than 100 meters
-				this.cameraDistance = Mathf.Clamp (this.cameraDistance, 3f, 5f);
-			}
-		}
-			
-		//Actual Camera Rig Transformations
-		Quaternion QT = Quaternion.Euler (localRotation.y, localRotation.x, 0);
-		pivotTransform.rotation = Quaternion.Lerp (this.pivotTransform.rotation, QT, Time.deltaTime * orbitDampening);
-
-		if(cameraTransform.localPosition.z != this.cameraDistance * -1f){
-
-			this.cameraTransform.localPosition = new Vector3(0f, 0f, Mathf.Lerp (this.cameraTransform.localPosition.z, this.cameraDistance * -1f, Time.deltaTime * scrollDampening));
-		}
-	}
+        rotation.x += (target.x - rotation.x) * 0.1f;
+        rotation.y += (target.y - rotation.y) * 0.1f;
+        distance += (distanceTarget - distance) * 0.3f;
+        Vector3 position;
+        position.x = distance * Mathf.Sin(rotation.x) * Mathf.Cos(rotation.y);
+        position.y = distance * Mathf.Sin(rotation.y);
+        position.z = distance * Mathf.Cos(rotation.x) * Mathf.Cos(rotation.y);
+        transform.position = position;
+        transform.LookAt(Vector3.zero);
+    }
 }

@@ -52,14 +52,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\@My Scripts\AutoRotation.cs" />
-     <Compile Include="Assets\@My Scripts\CameraObrbit.cs" />
      <Compile Include="Assets\@My Scripts\CameraOrbit.cs" />
      <Compile Include="Assets\@My Scripts\City.cs" />
-     <Compile Include="Assets\@My Scripts\GeoLocate.cs" />
      <Compile Include="Assets\@My Scripts\GPSupdate.cs" />
-     <Compile Include="Assets\@My Scripts\LatitudeLong.cs" />
-     <Compile Include="Assets\@My Scripts\LatLong.cs" />
-     <Compile Include="Assets\@My Scripts\LatLongReal.cs" />
+     <Compile Include="Assets\@My Scripts\InputManger.cs" />
      <Compile Include="Assets\@My Scripts\LoadCountryData.cs" />
      <Compile Include="Assets\@My Scripts\MarkerPositioning.cs" />
      <Compile Include="Assets\@My Scripts\MultipleLocalization.cs" />
