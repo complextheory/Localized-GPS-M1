@@ -55,9 +55,8 @@
      <Compile Include="Assets\@My Scripts\CameraOrbit.cs" />
      <Compile Include="Assets\@My Scripts\City.cs" />
      <Compile Include="Assets\@My Scripts\ColorSlider.cs" />
-     <Compile Include="Assets\@My Scripts\GPSupdate.cs" />
      <Compile Include="Assets\@My Scripts\HighResScreenShots.cs" />
-     <Compile Include="Assets\@My Scripts\InputManger.cs" />
+     <Compile Include="Assets\@My Scripts\InputManager.cs" />
      <Compile Include="Assets\@My Scripts\LoadCountryData.cs" />
      <Compile Include="Assets\@My Scripts\MarkerPositioning.cs" />
      <Compile Include="Assets\@My Scripts\MenuCamController.cs" />
@@ -65,7 +64,7 @@
      <Compile Include="Assets\@My Scripts\PointerLocation.cs" />
      <Compile Include="Assets\@My Scripts\rotateClouds.cs" />
      <Compile Include="Assets\@My Scripts\timeLight.cs" />
-     <Compile Include="Assets\@My Scripts\touchInput.cs" />
+     <Compile Include="Assets\@My Scripts\UserInput.cs" />
      <Compile Include="Assets\@My Scripts\WebCam.cs" />
      <Compile Include="Assets\@My Scripts\XMLManager.cs" />
      <None Include="Assets\@My Shaders\EarthShader.shader" />
