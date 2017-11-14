@@ -14,7 +14,7 @@ public class MarkerPositioning : MonoBehaviour {
 
 	void Start () {
 		// setting scale
-		transform.localScale=new Vector3(0.0003f,0.0003f,0.0003f);
+		transform.localScale=new Vector3(0.0001f,0.0001f,0.0001f);
 	
 	}
 	
@@ -34,6 +34,7 @@ public class MarkerPositioning : MonoBehaviour {
 
 			// change position
 			transform.localPosition = new Vector3 (x, y, z);
+			//Debug.Log ("Marker Vector 3 = " + transform.localPosition);
 			transform.forward = transform.position;
 
 			// change color and render

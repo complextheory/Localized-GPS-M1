@@ -30,7 +30,8 @@ public class PointerLocation : MonoBehaviour {
 				hitPoint = hit.point;
 				latLon = CartesianToPolar (hitPoint);
 
-				//latLon = LatLong (hitPoint, 6371393f);
+
+				//latLon = xyz_to_latlon (hitPoint);
 				Debug.Log ("LatLong = " + latLon);
 			}
 		}
@@ -44,8 +45,8 @@ public class PointerLocation : MonoBehaviour {
 
 		//calc longitude
 
-//		polar.y = Mathf.Acos(point.z / point.x);
-		polar.y = Mathf.Atan2 (point.x, point.z);
+		polar.y = Mathf.Acos(point.z / point.x);
+		//polar.y = Mathf.Atan2 (point.x, point.z);
 		Debug.Log ("y = " + polar.y);
 
 		//this is easier to write and read than sqrt(pow(x,2), pow(y,2))!
@@ -63,7 +64,6 @@ public class PointerLocation : MonoBehaviour {
 		//convert to deg
 		polar *= Mathf.Rad2Deg;
 
-		//Debug.Log ("y = " + polar.y + 10);
 
 		return polar;
 	}
@@ -79,5 +79,18 @@ public class PointerLocation : MonoBehaviour {
 
 
 		return latLong;
+	}
+
+	Vector2 xyz_to_latlon(Vector3 position)
+	{
+		double theta = Mathf.PI + Mathf.Atan2(position.z, position.x);
+		double phi = Mathf.Acos(-position.y);
+
+		float lat = (float)(phi / Mathf.PI * 180.0 - 90.0);
+		float lon = (float)(theta / (2 * Mathf.PI) * 360.0 - 180.0);
+
+		 Vector2 latLon = new Vector2 (lat, lon);
+
+		return latLon;
 	}
 }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/@My Scenes/Main Menu.unity
+- path: Assets/@My Scenes/Localized GPS M1.unity
   isLoaded: 1
   isActive: 1

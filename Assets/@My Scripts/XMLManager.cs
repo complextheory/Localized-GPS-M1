@@ -13,14 +13,35 @@ public class XMLManager : MonoBehaviour {
 
 	public static XMLManager ins;
 
+
+
+
 	void Awake(){
 
 		ins = this;
+
 	}
 
 	//List of Users
-	//public UserDatabase userDb;
+	public UserDatabase userDb;
+
+
+	//Save Function
+	public void SaveUsers(){
+		// Open a new XML file
+		XmlSerializer serializer = new XmlSerializer (typeof(UserDatabase));
+		FileStream stream = new FileStream (Application.dataPath + "/StreamingAssets/XML/item_data.xml", FileMode.Create);
+		serializer.Serialize (stream, userDb);
+		stream.Close ();
+	}
+
+	//Load Function
+
+
 }
+
+
+
 
 //[System.Serializable]
 //public class UserEntry{
@@ -34,8 +55,9 @@ public class XMLManager : MonoBehaviour {
 //	//public float latitude, longitude;
 //}
 
-//[System.Serializable]
-//public class UserDatabase{
-//
-//	public List <UserEntry> list = new List<UserEntry> ();
-//}
+[System.Serializable]
+public class UserDatabase{
+	
+	//public InputManager inputManager;
+	public List <UserInput> inputs = new List<UserInput> ();
+}

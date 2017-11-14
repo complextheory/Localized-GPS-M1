@@ -11,7 +11,7 @@ public class LoadCountryData : MonoBehaviour {
 	public static LoadCountryData ins;
 	public List<City> cities;
 
-	public XMLManager xManager;
+	//public XMLManager xManager;
 
 	public TextAsset cityData;
 
@@ -74,7 +74,7 @@ public class LoadCountryData : MonoBehaviour {
 	public float getLongitude(UserInput input){
 
 		City userCity = cities.Find (City => City.name == input.userCity);
-		float longitude = userCity.lng;
+		float longitude = userCity.lng + 3f;
 		return longitude;
 	}
 

@@ -68,6 +68,7 @@
      <Compile Include="Assets\@My Scripts\WebCam.cs" />
      <Compile Include="Assets\@My Scripts\XMLManager.cs" />
      <None Include="Assets\@My Shaders\EarthShader.shader" />
+     <None Include="Assets\StreamingAssets\XML\item_data.xml" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
  </Reference>
