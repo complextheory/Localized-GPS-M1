@@ -19,7 +19,8 @@ public class XMLManager : MonoBehaviour {
 	void Awake(){
 
 		ins = this;
-
+		UserListManager.InitializeList ();
+		userDb.inputs = UserListManager.GetList ();
 	}
 
 	//List of Users
@@ -28,7 +29,7 @@ public class XMLManager : MonoBehaviour {
 
 	//Save Function
 	public void SaveUsers(){
-		userDb.inputs = UserListManager.GetList ();
+		
 		// Open a new XML file
 		XmlSerializer serializer = new XmlSerializer (typeof(UserDatabase));
 		FileStream stream = new FileStream (Application.dataPath + "/StreamingAssets/XML/item_data.xml", FileMode.Create);
