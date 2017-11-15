@@ -327,6 +327,7 @@ MonoBehaviour:
   col: {r: 0, g: 0, b: 0, a: 0}
   img: {fileID: 114642077030241986}
   rend: {fileID: 23047411481702814}
+  userIndex: 0
 --- !u!114 &114749833730299920
 MonoBehaviour:
   m_ObjectHideFlags: 1

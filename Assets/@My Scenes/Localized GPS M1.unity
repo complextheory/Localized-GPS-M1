@@ -261,7 +261,7 @@ Prefab:
         type: 2}
       propertyPath: countryData
       value: 
-      objectReference: {fileID: 1004200986}
+      objectReference: {fileID: 0}
     - target: {fileID: 114698374613850562, guid: 03ab52ef1e2654b209bdfac937bff8d7,
         type: 2}
       propertyPath: inputManager
@@ -272,6 +272,11 @@ Prefab:
       propertyPath: xmlManager
       value: 
       objectReference: {fileID: 632138139}
+    - target: {fileID: 114698374613850562, guid: 03ab52ef1e2654b209bdfac937bff8d7,
+        type: 2}
+      propertyPath: loadUserData
+      value: 
+      objectReference: {fileID: 1004200986}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03ab52ef1e2654b209bdfac937bff8d7, type: 2}
   m_IsPrefabParent: 0
@@ -476,7 +481,7 @@ GameObject:
   - component: {fileID: 1004200987}
   - component: {fileID: 1004200986}
   m_Layer: 0
-  m_Name: DataLoader
+  m_Name: UserDataLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -490,7 +495,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1004200985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0800b7b8ff5cf47c2a5056c7a53bf0b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d1b79cdece414d4e85bba011daa6564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1004200987

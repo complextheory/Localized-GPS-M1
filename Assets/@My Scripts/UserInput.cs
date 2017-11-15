@@ -14,7 +14,7 @@ public class UserInput {
 
 	public string pictureName;
 
-	public int pictureIndex;
+	public int userIndex;
 
 	public Color markerColor;
 

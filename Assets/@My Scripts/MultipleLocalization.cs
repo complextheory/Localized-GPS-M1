@@ -10,11 +10,16 @@ public class MultipleLocalization : MonoBehaviour {
 	// this is the radii o the sphere/planet
 	public float R;
 
-	public LoadCountryData countryData;
+	public LoadUserData loadUserData;
 
 	//public InputManager inputManager;
 	public XMLManager xmlManager;
 	//UserDatabase userDB;
+
+	void Awake(){
+
+		UserListInterface.InitializeList ();
+	}
 
 	void Start (){
 		//userDB = xmlManager.userDb;
@@ -23,11 +28,12 @@ public class MultipleLocalization : MonoBehaviour {
 
 	void InstantiateMarker(){
 
+
 		Debug.Log ("City Should be " + UserDatabase.inputs[0].userCity);
 		//foreach (UserInputs input in inputManager.inputs) {
 
 		//for (int i = 0; i < inputManager.inputs.Count; i++) {
-		for(int i = 0; i < UserDatabase.inputs.Count; i++){
+		for(int i = 0; i < UserListInterface.GetList ().Count; i++){
 
 			// for each connected player add the marker at the LATitude and LONgitude
 			//for (int jj = 0; jj < markerLatLon.Length; jj++) {
@@ -40,16 +46,17 @@ public class MultipleLocalization : MonoBehaviour {
 			markScript.R = R;
 			//markScript.lat = markerLatLon [jj] [0];
 			//markScript.lat = countryData.getLatitude (inputManager.inputs[i]);
-			markScript.lat = countryData.getLatitude (UserDatabase.inputs[i]);
+			markScript.lat = loadUserData.getLatitude (UserListInterface.GetList ()[i]);
 			Debug.Log ("Latitude = " + markScript.lat);
 			//markScript.lon = markerLatLon [jj] [1];
 			//markScript.lon = countryData.getLongitude (inputManager.inputs[i]);
-			markScript.lon = countryData.getLongitude (UserDatabase.inputs[i]);
+			markScript.lon = loadUserData.getLongitude (UserListInterface.GetList ()[i]);
 			Debug.Log ("Longitude = " + markScript.lon);
 			//markScript.col = colors [jj];
 			//markScript.col = countryData.getColor (inputManager.inputs[i]);
-			markScript.col = countryData.getColor (UserDatabase.inputs[i]);
+			markScript.col = loadUserData.getColor (UserListInterface.GetList ()[i]);
 			//}
+			markScript.userIndex = loadUserData.getUserIndex (UserListInterface.GetList ()[i]);
 		}
 	}
 }

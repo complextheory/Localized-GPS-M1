@@ -6,7 +6,7 @@ using System;
 
 public class MarkerPositioning : MonoBehaviour {
 
-	public LoadCountryData loadCountryData;
+	public LoadUserData loadCountryData;
 
 	float elapsed;
 	// localization variables
@@ -14,24 +14,15 @@ public class MarkerPositioning : MonoBehaviour {
 	public Color col;
 	public Image img;
 	public Renderer rend;
-	//public Image userImage;
+
+	public int userIndex;
 
 
 	void Start () {
 		// setting scale
 		transform.localScale=new Vector3(0.00025f,0.00025f,0.00025f);
-	//	DirectoryInfo directoryInfo = new DirectoryInfo(Application.streamingAssetsPath);
-		//Debug.Log("Streaming Assets Path: " + Application.streamingAssetsPath);
-//		FileInfo[] allFiles = directoryInfo.GetFiles("*.*");
-
-//		foreach (FileInfo file in allFiles)
-//		{
-//			if (file.Name.Contains("user"))
-//			{
-//				StartCoroutine("LoadUserImage", file);
-//			}
-//		}
-		SetPicture ();
+		//userIndex = loadCountryData.getUserIndex (UserDatabase.inputs);
+		SetPicture (userIndex);
 	}
 	
 	// Update is called once per frame
@@ -56,10 +47,9 @@ public class MarkerPositioning : MonoBehaviour {
 		// change color and render
 		img.color=col;
 		rend.material.color = col;
-
 	}	
 
-	void SetPicture(){
+	public void SetPicture(int userIndex){
 
 		// Add picture PNG to texture
 

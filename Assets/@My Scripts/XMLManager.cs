@@ -19,7 +19,6 @@ public class XMLManager : MonoBehaviour {
 	void Awake(){
 
 		ins = this;
-		UserListInterface.InitializeList ();
 		UserDatabase.inputs = UserListInterface.GetList ();
 	}
 
