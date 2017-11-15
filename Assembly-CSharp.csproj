@@ -65,10 +65,9 @@
      <Compile Include="Assets\@My Scripts\rotateClouds.cs" />
      <Compile Include="Assets\@My Scripts\timeLight.cs" />
      <Compile Include="Assets\@My Scripts\UserInput.cs" />
+     <Compile Include="Assets\@My Scripts\UserListInterface.cs" />
      <Compile Include="Assets\@My Scripts\WebCam.cs" />
      <Compile Include="Assets\@My Scripts\XMLManager.cs" />
-     <Compile Include="Assets\UserListManager.cs" />
-     <None Include="Assets\StreamingAssets\XML\item_data.backup.xml" />
      <None Include="Assets\@My Shaders\EarthShader.shader" />
      <None Include="Assets\StreamingAssets\XML\item_data.xml" />
  <Reference Include="UnityEngine.CoreModule">

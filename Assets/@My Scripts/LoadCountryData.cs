@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using UnityEngine.UI;
+using System;
 
 
 // Analysis disable CheckNamespace
@@ -11,9 +14,7 @@ public class LoadCountryData : MonoBehaviour {
 	public static LoadCountryData ins;
 	public List<City> cities;
 
-	//public XMLManager xManager;
-
-	public TextAsset cityData;
+	TextAsset cityData;
 
 
 
@@ -82,5 +83,24 @@ public class LoadCountryData : MonoBehaviour {
 
 		Color markerColor = input.markerColor;
 		return markerColor;
+	}
+
+	public int getPictureIndex(UserInput input){
+
+		int picturIndex = input.pictureIndex;
+		return picturIndex;
+	}
+
+	public string getPictureName(UserInput input){
+//		Texture2D thisTexture;
+//		thisTexture = new Texture2D(100, 100);
+//		byte[] bytes;
+//		bytes = File.ReadAllBytes(Path.Combine(Application.persistentDataPath, input.pictureName + ".png"));
+//		thisTexture.LoadImage(bytes);
+//		thisTexture.name = input.pictureName;
+//		prefabMarker.GetComponentInChildren<RawImage> ().texture = thisTexture;
+
+		string pictureName = input.pictureName;
+		return pictureName;
 	}
 }

@@ -10,5 +10,13 @@ public class UserInput {
 
 	public string userCity;
 
+	public string userCountry;
+
+	public string pictureName;
+
+	public int pictureIndex;
+
 	public Color markerColor;
+
+
 }

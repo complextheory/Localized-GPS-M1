@@ -235,7 +235,7 @@ Prefab:
     - target: {fileID: 114236370352043584, guid: 03ab52ef1e2654b209bdfac937bff8d7,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114236370352043584, guid: 03ab52ef1e2654b209bdfac937bff8d7,
         type: 2}
@@ -250,7 +250,7 @@ Prefab:
     - target: {fileID: 114863766499885740, guid: 03ab52ef1e2654b209bdfac937bff8d7,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114698374613850562, guid: 03ab52ef1e2654b209bdfac937bff8d7,
         type: 2}
@@ -329,7 +329,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 626333380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 279, y: -79, z: 0}
+  m_LocalPosition: {x: 279, y: -76.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1798127436}
@@ -453,20 +453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef82bc5fe881c44ab8fd6f6de02d6790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userDb:
-    inputs:
-    - userName: Jarvis
-      userCity: Chicago
-      markerColor: {r: 1, g: 0, b: 0, a: 0}
-    - userName: 
-      userCity: New York
-      markerColor: {r: 0.11724138, g: 1, b: 0, a: 0}
-    - userName: 
-      userCity: Dhaka
-      markerColor: {r: 0, g: 0.25517225, b: 1, a: 0}
-    - userName: 
-      userCity: Paris
-      markerColor: {r: 1, g: 0.59999996, b: 0, a: 0}
 --- !u!4 &632138140
 Transform:
   m_ObjectHideFlags: 0
@@ -507,7 +493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0800b7b8ff5cf47c2a5056c7a53bf0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cityData: {fileID: 4900000, guid: ba96015e554ff4b98a311b24a4344c39, type: 3}
 --- !u!4 &1004200987
 Transform:
   m_ObjectHideFlags: 0
@@ -1029,7 +1014,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2009254291}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 359, y: 94, z: 0}
+  m_LocalPosition: {x: 359, y: 91.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 626333381}

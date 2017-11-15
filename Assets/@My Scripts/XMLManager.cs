@@ -19,8 +19,8 @@ public class XMLManager : MonoBehaviour {
 	void Awake(){
 
 		ins = this;
-		UserListManager.InitializeList ();
-		userDb.inputs = UserListManager.GetList ();
+		UserListInterface.InitializeList ();
+		UserDatabase.inputs = UserListInterface.GetList ();
 	}
 
 	//List of Users
@@ -38,30 +38,19 @@ public class XMLManager : MonoBehaviour {
 	}
 
 	//Load Function
-
-
+	public void LoadUsers(){
+		XmlSerializer serializer = new XmlSerializer (typeof(UserDatabase));
+		FileStream stream = new FileStream (Application.dataPath + "/StreamingAssets/XML/item_data.xml", FileMode.Open);
+		userDb = serializer.Deserialize (stream) as UserDatabase;
+		stream.Close ();
+	}
 }
-
-
-
-
-//[System.Serializable]
-//public class UserEntry{
-//
-//	public string userName;
-//
-//	public string userCity;
-//
-//	public Color markerColor;
-//
-//	//public float latitude, longitude;
-//}
 
 [System.Serializable]
 public class UserDatabase{
 	
 	//public InputManager inputManager;
-	public List <UserInput> inputs = new List<UserInput> ();
+	public static List <UserInput> inputs = new List<UserInput> ();
 
 
 }

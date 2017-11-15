@@ -1,15 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/@My Scripts/ColorSlider.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/@My Scripts/MarkerPositioning.cs">
     <Files>
-      <File FileName="Assets/@My Scripts/LoadCountryData.cs" Line="59" Column="5" />
-      <File FileName="Assets/@My Scripts/XMLManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/@My Scripts/CameraOrbit.cs" Line="1" Column="1" />
-      <File FileName="Assets/@My Scripts/touchInput.cs" Line="1" Column="1" />
-      <File FileName="Assets/@My Scripts/WebCam.cs" Line="20" Column="24" />
-      <File FileName="Assets/@My Resources/cityData.csv" Line="1" Column="1" />
-      <File FileName="Assets/@My Scripts/MenuCamController.cs" Line="18" Column="2" />
-      <File FileName="Assets/@My Scripts/ColorSlider.cs" Line="71" Column="7" />
+      <File FileName="Assets/@My Scripts/XMLManager.cs" Line="35" Column="117" />
+      <File FileName="Assets/@My Scripts/LoadCountryData.cs" Line="15" Column="27" />
+      <File FileName="Assets/@My Scripts/UserListInterface.cs" Line="30" Column="40" />
+      <File FileName="Assets/@My Scripts/MarkerPositioning.cs" Line="67" Column="44" />
+      <File FileName="Assets/@My Scripts/UserInput.cs" Line="18" Column="2" />
+      <File FileName="Assets/@My Scripts/MultipleLocalization.cs" Line="17" Column="4" />
+      <File FileName="Assets/@My Scripts/HighResScreenShots.cs" Line="147" Column="100" />
+      <File FileName="Assets/Resources/cityData.csv" Line="1547" Column="59" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

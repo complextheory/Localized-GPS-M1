@@ -133,16 +133,22 @@ public class HighResScreenShots : MonoBehaviour {
 			}
 
 			// create new thread to save the image to file (only operation that can be done in background)
-			new System.Threading.Thread(() =>
-				{
-					// create file and write optional header with image bytes
-					var f = System.IO.File.Create(filename);
-					if (fileHeader != null) f.Write(fileHeader, 0, fileHeader.Length);
-					f.Write(fileData, 0, fileData.Length);
-					f.Close();
-					Debug.Log(string.Format("Wrote screenshot {0} of size {1}", filename, fileData.Length));
-				}).Start();
+//			new System.Threading.Thread(() =>
+//				{
+//					// create file and write optional header with image bytes
+//					var f = System.IO.File.Create(filename);
+//
+//					if (fileHeader != null) f.Write(fileHeader, 0, fileHeader.Length);
+//					f.Write(fileData, 0, fileData.Length);
+//					f.Close();
+//					Debug.Log(string.Format("Wrote screenshot {0} of size {1}", filename, fileData.Length));
+//				}).Start();
 
+			FileStream stream = new FileStream (Application.dataPath + "/StreamingAssets/PNG/userPicture.png", FileMode.Create);
+			if (fileHeader != null) stream.Write(fileHeader, 0, fileHeader.Length);
+			stream.Write (fileData, 0, fileData.Length);
+			stream.Close ();
+			Debug.Log(string.Format("Wrote screenshot {0} of size {1}", "/StreamingAssets/PNG/userPicture.png" , fileData.Length));
 			// unhide optional game object if set
 			if (hideGameObject != null) hideGameObject.SetActive(true);
 
