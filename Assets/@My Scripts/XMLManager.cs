@@ -23,11 +23,11 @@ public class XMLManager : MonoBehaviour {
 	}
 
 	//List of Users
-	public UserDatabase userDb;
+	public static UserDatabase userDb;
 
 
 	//Save Function
-	public void SaveUsers(){
+	public static void SaveUsers(){
 		
 		// Open a new XML file
 		XmlSerializer serializer = new XmlSerializer (typeof(UserDatabase));
@@ -37,7 +37,7 @@ public class XMLManager : MonoBehaviour {
 	}
 
 	//Load Function
-	public void LoadUsers(){
+	public static void LoadUsers(){
 		XmlSerializer serializer = new XmlSerializer (typeof(UserDatabase));
 		FileStream stream = new FileStream (Application.dataPath + "/StreamingAssets/XML/item_data.xml", FileMode.Open);
 		userDb = serializer.Deserialize (stream) as UserDatabase;

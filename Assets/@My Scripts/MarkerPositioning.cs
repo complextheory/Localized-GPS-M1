@@ -60,6 +60,6 @@ public class MarkerPositioning : MonoBehaviour {
 		//thisTexture.name = "userPicture";
 		Sprite sprite = Sprite.Create (thisTexture, new Rect (0, 0, 900, 900), new Vector2 (0.5f, 9.0f), 1.0f);
 		//gameObject.GetComponentInChildren<> ().GetComponentInChildren<Canvas> ().GetComponentInChildren<Image> ().sprite = sprite;
-		this.gameObject.transform.GetChild (1).GetComponentInChildren<Image> ().sprite = sprite;
+		gameObject.transform.GetChild (1).GetComponentInChildren<Image> ().sprite = sprite;
 	}
 }

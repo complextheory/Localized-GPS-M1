@@ -6,40 +6,49 @@ public class UserListInterface {
 
 	//public UserListManager ins;
 
-	 static List <UserInput>list;
+	static List <UserInput>list;
 
+//	void Awake (){
+//		InitializeList ();
+//	}
 
+	void Start (){
+		XMLManager.LoadUsers ();
+		list = UserDatabase.inputs;
+		Debug.Log ("Interface List = " + list);
+	}
 	public static void InitializeList ()
 	{
 		Debug.Log ("Should Initialize List");
-		list = new List<UserInput> ();
+		//list = new List<UserInput> ();
+		XMLManager.LoadUsers ();
+		list = UserDatabase.inputs;
 
-
-		if (true) {
-
-			List<string> names = new List<string> {"Thomas", "Edward", "Henry", "Jason", "Penelope", 
-				"Kirt"
-			};
-			List<string> testCities = new List<string> {"Mobaye", "New York", "Dhaka", "Ravensthorpe",
-				"Yerevan", "Eisenstadt"
-			};
-			List<Color> colors = new List <Color> {Color.blue, Color.gray, Color.yellow, Color.blue,
-				Color.cyan, Color.red
-			};
-			//list = new List<UserInput> ();
-
-			for (int i = 0; i < testCities.Count; i++) {
-				UserInput tempUser = new UserInput ();
-				tempUser.userName = names[i];
-				tempUser.userCity = testCities[i];
-				tempUser.pictureName = "userPicture";
-				Debug.Log ("User Picture = " + tempUser.pictureName); 
-				tempUser.markerColor = colors[i];
-				list.Add (tempUser);
-			}
-			Debug.Log ("List = " + list.Count);
-		}else 
-			list = new List<UserInput>();
+//		if (true) {
+//
+//			List<string> names = new List<string> {"Thomas", "Edward", "Henry", "Jason", "Penelope", 
+//				"Kirt"
+//			};
+//			List<string> testCities = new List<string> {"Mobaye", "New York", "Dhaka", "Ravensthorpe",
+//				"Yerevan", "Eisenstadt"
+//			};
+//			List<Color> colors = new List <Color> {Color.blue, Color.gray, Color.yellow, Color.blue,
+//				Color.cyan, Color.red
+//			};
+//			//list = new List<UserInput> ();
+//
+//			for (int i = 0; i < testCities.Count; i++) {
+//				UserInput tempUser = new UserInput ();
+//				tempUser.userName = names[i];
+//				tempUser.userCity = testCities[i];
+//				tempUser.pictureName = "userPicture";
+//				Debug.Log ("User Picture = " + tempUser.pictureName); 
+//				tempUser.markerColor = colors[i];
+//				list.Add (tempUser);
+//			}
+//			Debug.Log ("List = " + list.Count);
+//		}else 
+//			list = new List<UserInput>();
 	}
 			
 

@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/@My Scenes/Main Menu.unity
+    guid: 09f6d3a31810049099e191d47b93e194
+  - enabled: 1
+    path: Assets/@My Scenes/Take Picture.unity
+    guid: 812e559d53dab4ae786e8008481ce55a
+  - enabled: 1
+    path: Assets/@My Scenes/Localized GPS M1.unity
+    guid: ed9a27b3228e7426e969f04058a7a9ed

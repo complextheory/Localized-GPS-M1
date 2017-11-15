@@ -7,12 +7,15 @@ using System;
 
 
 // Analysis disable CheckNamespace
+using UnityEngine.SceneManagement;
+
+
 public class LoadUserData : MonoBehaviour {
 // Analysis restore CheckNamespace
 
 
 	public static LoadUserData ins;
-	public List<City> cities;
+	public static List<City> cities;
 
 	TextAsset cityData;
 
@@ -91,6 +94,11 @@ public class LoadUserData : MonoBehaviour {
 		return userIndex;
 	}
 
+	public int setUserIndex(UserInput input){
+		int userIndex = input.userIndex + 1;
+		return userIndex;
+	}
+
 	public Color getColor(UserInput input){
 
 		Color markerColor = input.markerColor;
@@ -102,6 +110,4 @@ public class LoadUserData : MonoBehaviour {
 		string pictureName = input.pictureName;
 		return pictureName;
 	}
-
-
 }

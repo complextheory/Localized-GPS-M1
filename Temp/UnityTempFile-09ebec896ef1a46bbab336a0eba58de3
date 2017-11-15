@@ -166,6 +166,7 @@
 'Assets/@My Scripts/MarkerPositioning.cs'
 'Assets/@My Scripts/MenuCamController.cs'
 'Assets/@My Scripts/MultipleLocalization.cs'
+'Assets/@My Scripts/PictureManager.cs'
 'Assets/@My Scripts/PointerLocation.cs'
 'Assets/@My Scripts/rotateClouds.cs'
 'Assets/@My Scripts/timeLight.cs'

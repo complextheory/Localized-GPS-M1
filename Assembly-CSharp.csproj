@@ -61,6 +61,7 @@
      <Compile Include="Assets\@My Scripts\MarkerPositioning.cs" />
      <Compile Include="Assets\@My Scripts\MenuCamController.cs" />
      <Compile Include="Assets\@My Scripts\MultipleLocalization.cs" />
+     <Compile Include="Assets\@My Scripts\PictureManager.cs" />
      <Compile Include="Assets\@My Scripts\PointerLocation.cs" />
      <Compile Include="Assets\@My Scripts\rotateClouds.cs" />
      <Compile Include="Assets\@My Scripts\timeLight.cs" />

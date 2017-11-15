@@ -17,12 +17,13 @@ public class MultipleLocalization : MonoBehaviour {
 	//UserDatabase userDB;
 
 	void Awake(){
-
 		UserListInterface.InitializeList ();
+
 	}
 
 	void Start (){
 		//userDB = xmlManager.userDb;
+
 		InstantiateMarker ();
 	}
 

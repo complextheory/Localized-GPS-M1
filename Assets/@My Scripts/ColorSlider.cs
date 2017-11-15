@@ -9,8 +9,9 @@ public class ColorSlider : MonoBehaviour {
 	//Color32[] colors;
 	Color[] colors;
 	float ColSlidervalue = 3f;
+	public static Color currentColor;
 
-	public Animator anim;
+	//public Animator anim;
 	//public Animation anim;
 
 	void Awake()
@@ -39,31 +40,13 @@ public class ColorSlider : MonoBehaviour {
 	public void ChangeColour(float value)
 	{
 		Debug.Log ("ChangeColor Called Value = " + value);
-//		if (value == 0f)
-//		{
-////			gameObject.GetComponent<Renderer>().material.color = Colors[0];
-//			gameObject.GetComponent<Image>().color = colors[0];
-//		}
-//		if (value == 1f)
-//		{
-////			gameObject.GetComponent<Renderer>().material.color = Colors[1];
-//			gameObject.GetComponent<Image>().color = colors[1];
-//		}
-//		if (value == 2f)
-//		{
-////			gameObject.GetComponent<Renderer>().material.color = Colors[2];
-//			gameObject.GetComponent<Image>().color = colors[2];
-//		}
-//		if (value == 3f)
-//		{
-////			gameObject.GetComponent<Renderer>().material.color = Colors[3];
-//			gameObject.GetComponent<Image>().color = colors[3];
-//		}
 
 		for(int i = 0; i < colors.Length; i++){
 
-			if(value == i)
-				gameObject.GetComponent<Image>().color = colors[i];
+			if (value == i) {
+				gameObject.GetComponent<Image> ().color = colors [i];
+				currentColor = colors [i];
+			}
 
 			if (colors [i] == Color.green || colors [i] == Color.cyan || colors [i] == Color.white) {
 				gameObject.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().color = colors [1];
