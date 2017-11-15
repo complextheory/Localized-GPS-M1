@@ -74,7 +74,7 @@ public class MenuCamController : MonoBehaviour
 		Debug.Log ("Current User List = " + UserListInterface.GetList ()); 
 		PlayerPrefs.SetInt ("User Index", PlayerPrefs.GetInt ("User Index")+ 1);
 		Debug.Log ("Current User Index = " + userInput.userIndex);
-		XMLManager.SaveUsers ();
+		//XMLManager.SaveUsers ();
 		SceneManager.LoadScene ("Take Picture");
 		Debug.Log ("Should Load Scene");
 	}

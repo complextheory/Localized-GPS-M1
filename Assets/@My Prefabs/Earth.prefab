@@ -148,7 +148,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 687d647dc65accb46986986716f5e139, type: 2}
+  - {fileID: 2100000, guid: f1d93a64ee3034f77bff1c58a68d4ec5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -215,19 +215,19 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149427536369854}
-  m_Mesh: {fileID: 4300000, guid: d621171dc54c2844b8e349e87e083476, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 77f2aed0c4351407085ce2aeb3cc8593, type: 3}
 --- !u!114 &114236370352043584
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149427536369854}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bc6fe9d292de4a309bc3176e9d190d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotatingSpeed: {x: 0, y: 0, z: 0}
+  rotatingSpeed: {x: 0, y: 5, z: 0}
 --- !u!114 &114698374613850562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,17 +239,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5aacd9cb7dd4766882cb06e403ea94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  markerLatLon:
-  - {x: -4, y: 23}
-  - {x: 40, y: -73}
-  - {x: 40, y: -24}
-  colors:
-  - {r: 1, g: 0, b: 0, a: 0}
-  - {r: 0, g: 1, b: 0.21379304, a: 0}
-  - {r: 0, g: 0.2965517, b: 1, a: 0}
-  prefabMarker: {fileID: 1652307984908572, guid: e64fbd1dec330479bbf1dd8615327a42,
+  prefabMarker: {fileID: 1402912050245022, guid: 7271ef9b2a54a4b94b6c0cefdfb7a44c,
     type: 2}
   R: 0.01
+  loadUserData: {fileID: 0}
+  xmlManager: {fileID: 0}
 --- !u!114 &114863766499885740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7c7e760122f4ddea5d74fc9a837752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedY: 0
+  speedY: -3
 --- !u!122 &122652541425153530
 Halo:
   m_ObjectHideFlags: 1
@@ -272,4 +266,4 @@ Halo:
   m_Color:
     serializedVersion: 2
     rgba: 4291001431
-  m_Size: 2.5
+  m_Size: 2.7

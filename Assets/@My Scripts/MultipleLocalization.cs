@@ -17,7 +17,7 @@ public class MultipleLocalization : MonoBehaviour {
 	//UserDatabase userDB;
 
 	void Awake(){
-		UserListInterface.InitializeList ();
+		//UserListInterface.InitializeList ();
 
 	}
 
