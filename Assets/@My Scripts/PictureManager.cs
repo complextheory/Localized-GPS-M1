@@ -15,8 +15,7 @@ public class PictureManager : MonoBehaviour {
 
 		cullingMask = Camera.main.cullingMask;
 		clearFlags = Camera.main.clearFlags;
-		Debug.Log("LIST IS NOW: " +UserListInterface.GetList().Count);
-	}
+		}
 
 	// Update is called once per frame
 	void Update () {
@@ -27,11 +26,11 @@ public class PictureManager : MonoBehaviour {
 			if (isShowing) {
 				Time.timeScale = 0;
 				StartCoroutine (PauseCamera ());
-				//PauseCamera ();
+				PauseCamera ();
 				menu.SetActive (isShowing);
 			} else{
 				Time.timeScale = 1;
-				//ResumeCamera ();
+
 				StopCoroutine (PauseCamera ());
 				StartCoroutine (ResumeCamera ());
 				menu.SetActive (isShowing);
@@ -47,6 +46,8 @@ public class PictureManager : MonoBehaviour {
 	}
 
 	public void Accept(){
+		Time.timeScale = 1;
+		StopAllCoroutines();
 		SceneManager.LoadScene ("Localized GPS M1");
 	}
 

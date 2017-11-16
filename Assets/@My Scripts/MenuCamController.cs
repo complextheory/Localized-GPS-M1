@@ -23,12 +23,12 @@ public class MenuCamController : MonoBehaviour
 	{ 
 		UserListInterface.InitializeList ();
 		XMLManager.LoadUsers();
+
 		lastPosition = transform.position;
 		loadedList = UserDatabase.inputs;
-		UserListInterface.SetList(loadedList);
 
+		UserListInterface.SetList(loadedList);
 		List<UserInput> testList = UserListInterface.GetList();
-		Debug.Log(testList.Count);
 		 
 	}
 
@@ -79,12 +79,10 @@ public class MenuCamController : MonoBehaviour
 		}
 		userInput.userIndex = PlayerPrefs.GetInt ("User Index");
 		UserListInterface.AddUser (userInput);
-		Debug.Log ("Current User List = " + UserListInterface.GetList ()); 
 		PlayerPrefs.SetInt ("User Index", PlayerPrefs.GetInt ("User Index")+ 1);
-		Debug.Log ("Current User Index = " + userInput.userIndex);
 		//XMLManager.SaveUsers ();
-		SceneManager.LoadScene ("Localized GPS M1");
-		Debug.Log ("Should Load Scene");
+		SceneManager.LoadScene ("Take Picture");
+		Debug.Log ("Loading Scene: Take Picture");
 	}
 }﻿
 

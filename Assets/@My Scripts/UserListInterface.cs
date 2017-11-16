@@ -15,11 +15,10 @@ public class UserListInterface {
 	void Start (){
 		XMLManager.LoadUsers ();
 		list = UserDatabase.inputs;
-		Debug.Log ("Interface List = " + list);
 	}
 	public static void InitializeList ()
 	{
-		Debug.Log ("Should Initialize List");
+		Debug.Log ("Initializing List");
 		//list = new List<UserInput> ();
 		XMLManager.LoadUsers ();
 		list = UserDatabase.inputs;

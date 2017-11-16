@@ -41,11 +41,9 @@ public class MarkerPositioning : MonoBehaviour {
 		float x = Mathf.Cos (lat*Mathf.PI/180) * Mathf.Cos ((lon-90)*Mathf.PI/180) * R;
 		float z = Mathf.Cos (lat*Mathf.PI/180) * Mathf.Sin ((lon-90)*Mathf.PI/180) * R;
 		float y = Mathf.Sin (lat*Mathf.PI/180) * R;
-		Debug.Log(" LAT AND LONG ARE " + transform.gameObject);
 
 		// change position
 		transform.localPosition = new Vector3 (x, y, z);
-		Debug.Log("Alphabits: "+ x + "" + y +" " + z);
 		//Debug.Log ("Marker Vector 3 = " + transform.localPosition);
 		transform.forward = transform.position;
 

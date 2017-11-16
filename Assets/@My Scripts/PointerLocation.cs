@@ -32,7 +32,6 @@ public class PointerLocation : MonoBehaviour {
 
 
 				//latLon = xyz_to_latlon (hitPoint);
-				Debug.Log ("LatLong = " + latLon);
 			}
 		}
 	}
@@ -47,7 +46,6 @@ public class PointerLocation : MonoBehaviour {
 
 		polar.y = Mathf.Acos(point.z / point.x);
 		//polar.y = Mathf.Atan2 (point.x, point.z);
-		Debug.Log ("y = " + polar.y);
 
 		//this is easier to write and read than sqrt(pow(x,2), pow(y,2))!
 		//float xzLen = Vector2 (point.x, point.z).magnitude;

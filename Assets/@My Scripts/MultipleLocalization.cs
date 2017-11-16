@@ -12,14 +12,12 @@ public class MultipleLocalization : MonoBehaviour {
 
 	// this is the marker object with its own code and more:
 	public GameObject prefabMarker;
-	// this is the radii o the sphere/planet
+	// this is the radius of the sphere/planet
 	public float R;
 
 	public LoadUserData loadUserData;
 
-	//public InputManager inputManager;
 	public XMLManager xmlManager;
-	//UserDatabase userDB;
 
 	void Awake(){
 		UserListInterface.InitializeList ();
@@ -27,7 +25,6 @@ public class MultipleLocalization : MonoBehaviour {
 	}
 
 	void Start (){
-		//userDB = xmlManager.userDb;
 
 		InstantiateMarker ();
 	}
@@ -35,21 +32,6 @@ public class MultipleLocalization : MonoBehaviour {
 	void InstantiateMarker(){
 
 
-
-		//foreach (UserInputs input in inputManager.inputs) {
-		Debug.Log("Before");
-		//Debug.Log("City should be " + UserListInterface.GetList()[0].userCity);
-
-		Debug.Log("Aft");
-
-		List<UserInput> tempList = new List<UserInput>();	//List<UserInput> tempList = new List<UserInput>();
-		UserInput tempUser = new UserInput();
-		tempUser.userName = "Jarvis";
-		tempUser.markerColor = Color.green;
-		tempUser.userCity = "Chicago";
-		tempList.Add(tempUser);
-
-		//for (int i = 0; i < inputManager.inputs.Count; i++) {
 		for(int i = 0; i < UserListInterface.GetList().Count; i++){
 
 			// for each connected player add the marker at the LATitude and LONgitude
