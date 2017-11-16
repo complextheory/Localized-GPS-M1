@@ -8,7 +8,7 @@ public class ColorSlider : MonoBehaviour {
 	public Slider cSlider;
 	//Color32[] colors;
 	Color[] colors;
-	float ColSlidervalue = 3f;
+	public float ColSlidervalue ;
 	public static Color currentColor;
 
 	//public Animator anim;
@@ -39,7 +39,7 @@ public class ColorSlider : MonoBehaviour {
 
 	public void ChangeColour(float value)
 	{
-		Debug.Log ("ChangeColor Called Value = " + value);
+		Debug.Log ("ChangeColor Called Value = " + gameObject);
 
 		for(int i = 0; i < colors.Length; i++){
 
@@ -49,7 +49,7 @@ public class ColorSlider : MonoBehaviour {
 			}
 
 			if (colors [i] == Color.green || colors [i] == Color.cyan || colors [i] == Color.white) {
-				gameObject.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().color = colors [1];
+				gameObject.GetComponentInChildren<Text> ().color = colors [1];
 				//anim.Stop ();
 				//anim.StopPlayback ();
 			}

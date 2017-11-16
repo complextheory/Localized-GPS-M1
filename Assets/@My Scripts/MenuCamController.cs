@@ -16,11 +16,20 @@ public class MenuCamController : MonoBehaviour
 	public InputField inputName, inputCity;
 	UserInput userInput = new UserInput();
 	public LoadUserData loadUserData;
+	public List<UserInput> loadedList;
+
 
 	void Start ()
 	{ 
-		//UserListInterface.InitializeList ();
-		lastPosition = transform.position; 
+		UserListInterface.InitializeList ();
+		XMLManager.LoadUsers();
+		lastPosition = transform.position;
+		loadedList = UserDatabase.inputs;
+		UserListInterface.SetList(loadedList);
+
+		List<UserInput> testList = UserListInterface.GetList();
+		Debug.Log(testList.Count);
+		 
 	}
 
 	void Update ()
@@ -65,17 +74,16 @@ public class MenuCamController : MonoBehaviour
 
 	public void changeScene(){
 
-		if(UserListInterface.GetList () == null){
-			userInput.userIndex = 1;
-		}else
+		if(PlayerPrefs.GetInt("User Index") == null){
+			PlayerPrefs.SetInt("User Index", 1);
+		}
 		userInput.userIndex = PlayerPrefs.GetInt ("User Index");
-		
 		UserListInterface.AddUser (userInput);
 		Debug.Log ("Current User List = " + UserListInterface.GetList ()); 
 		PlayerPrefs.SetInt ("User Index", PlayerPrefs.GetInt ("User Index")+ 1);
 		Debug.Log ("Current User Index = " + userInput.userIndex);
 		//XMLManager.SaveUsers ();
-		SceneManager.LoadScene ("Take Picture");
+		SceneManager.LoadScene ("Localized GPS M1");
 		Debug.Log ("Should Load Scene");
 	}
 }﻿

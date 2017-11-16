@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 
 // Analysis disable CheckNamespace
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+
+
 public class MultipleLocalization : MonoBehaviour {
 // Analysis restore CheckNamespace
 
@@ -17,7 +22,7 @@ public class MultipleLocalization : MonoBehaviour {
 	//UserDatabase userDB;
 
 	void Awake(){
-		//UserListInterface.InitializeList ();
+		UserListInterface.InitializeList ();
 
 	}
 
@@ -30,11 +35,22 @@ public class MultipleLocalization : MonoBehaviour {
 	void InstantiateMarker(){
 
 
-		Debug.Log ("City Should be " + UserDatabase.inputs[0].userCity);
+
 		//foreach (UserInputs input in inputManager.inputs) {
+		Debug.Log("Before");
+		//Debug.Log("City should be " + UserListInterface.GetList()[0].userCity);
+
+		Debug.Log("Aft");
+
+		List<UserInput> tempList = new List<UserInput>();	//List<UserInput> tempList = new List<UserInput>();
+		UserInput tempUser = new UserInput();
+		tempUser.userName = "Jarvis";
+		tempUser.markerColor = Color.green;
+		tempUser.userCity = "Chicago";
+		tempList.Add(tempUser);
 
 		//for (int i = 0; i < inputManager.inputs.Count; i++) {
-		for(int i = 0; i < UserListInterface.GetList ().Count; i++){
+		for(int i = 0; i < UserListInterface.GetList().Count; i++){
 
 			// for each connected player add the marker at the LATitude and LONgitude
 			//for (int jj = 0; jj < markerLatLon.Length; jj++) {
@@ -48,16 +64,21 @@ public class MultipleLocalization : MonoBehaviour {
 			//markScript.lat = markerLatLon [jj] [0];
 			//markScript.lat = countryData.getLatitude (inputManager.inputs[i]);
 			markScript.lat = loadUserData.getLatitude (UserListInterface.GetList ()[i]);
+			//markScript.lat = loadUserData.getLatitude (tempList[i]);
+			//Debug.Log ("City Should be " + loadUserData.getLatitude (UserListInterface.GetList ()[i]));
 			Debug.Log ("Latitude = " + markScript.lat);
 			//markScript.lon = markerLatLon [jj] [1];
 			//markScript.lon = countryData.getLongitude (inputManager.inputs[i]);
 			markScript.lon = loadUserData.getLongitude (UserListInterface.GetList ()[i]);
+			//markScript.lon = loadUserData.getLongitude (tempList[i]);
 			Debug.Log ("Longitude = " + markScript.lon);
 			//markScript.col = colors [jj];
 			//markScript.col = countryData.getColor (inputManager.inputs[i]);
 			markScript.col = loadUserData.getColor (UserListInterface.GetList ()[i]);
+			//markScript.col = loadUserData.getColor (tempList[i]);
 			//}
 			markScript.userIndex = loadUserData.getUserIndex (UserListInterface.GetList ()[i]);
+
 		}
 	}
 }

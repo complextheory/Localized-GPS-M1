@@ -15,6 +15,7 @@ public class PictureManager : MonoBehaviour {
 
 		cullingMask = Camera.main.cullingMask;
 		clearFlags = Camera.main.clearFlags;
+		Debug.Log("LIST IS NOW: " +UserListInterface.GetList().Count);
 	}
 
 	// Update is called once per frame
@@ -35,7 +36,7 @@ public class PictureManager : MonoBehaviour {
 				StartCoroutine (ResumeCamera ());
 				menu.SetActive (isShowing);
 			}
-			//StopAllCoroutines ();	
+			StopCoroutine (ResumeCamera());	
 
 		}
 	}
