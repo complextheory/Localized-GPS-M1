@@ -19,29 +19,43 @@ public class XMLManager : MonoBehaviour {
 	void Awake(){
 
 		ins = this;
-		UserDatabase.inputs = UserListInterface.GetList ();
+		//UserDatabase.inputs = UserListInterface.GetList ();
 	}
 
 	//List of Users
-	public static UserDatabase userDb;
+	public UserDatabase userDb;
+
 
 
 	//Save Function
-	public static void SaveUsers(){
+	public void SaveUsers(){
+
 		
+		//UserDatabase.inputs = UserListInterface.GetList ();
+
 		// Open a new XML file
 		XmlSerializer serializer = new XmlSerializer (typeof(UserDatabase));
 		FileStream stream = new FileStream (Application.dataPath + "/StreamingAssets/XML/item_data.xml", FileMode.Create);
 		serializer.Serialize (stream, userDb);
 		stream.Close ();
+		
+
+
+		//Debug.Log ("Should Save List. After List = " + UserDatabase.inputs.Count); 
+		Debug.Log ("Should Save List. After List = " + userDb.inputs.Count); 
 	}
 
 	//Load Function
-	public static void LoadUsers(){
+	public void LoadUsers(){
+
+
 		XmlSerializer serializer = new XmlSerializer (typeof(UserDatabase));
 		FileStream stream = new FileStream (Application.dataPath + "/StreamingAssets/XML/item_data.xml", FileMode.Open);
 		userDb = serializer.Deserialize (stream) as UserDatabase;
 		stream.Close ();
+
+		//UserListInterface.SetList (UserDatabase.inputs);
+		UserListInterface.SetList (userDb.inputs);
 	}
 }
 
@@ -49,7 +63,7 @@ public class XMLManager : MonoBehaviour {
 public class UserDatabase{
 	
 	//public InputManager inputManager;
-	public static List <UserInput> inputs = new List<UserInput> ();
-
+	public List <UserInput> inputs = new List<UserInput> ();
+	//public static List <UserInput> inputs;
 
 }

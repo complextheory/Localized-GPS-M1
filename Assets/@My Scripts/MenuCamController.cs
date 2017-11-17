@@ -11,24 +11,32 @@ public class MenuCamController : MonoBehaviour
 	public float speedFactor = 0.01f;
 	public float zoomFactor = 1.0f;
 	public Transform currentMount;
+
 	public Camera cameraComp;
 	Vector3 lastPosition;
 	public InputField inputName, inputCity;
 	UserInput userInput = new UserInput();
 	public LoadUserData loadUserData;
 	public List<UserInput> loadedList;
+	public XMLManager xmlManager;
 
 
 	void Start ()
 	{ 
+		//if(XMLManager.ins.userDb.inputs.Count != 0){
+			xmlManager.LoadUsers();
+
+		//}
+		//Debug.Log ("Should Load List. Before List = " + UserListInterface.GetList ().Count);
+
 		UserListInterface.InitializeList ();
-		XMLManager.LoadUsers();
+		Debug.Log ("Should Load List. After List = " + xmlManager.userDb.inputs.Count);
 
 		lastPosition = transform.position;
-		loadedList = UserDatabase.inputs;
+		//loadedList = UserDatabase.inputs;
 
-		UserListInterface.SetList(loadedList);
-		List<UserInput> testList = UserListInterface.GetList();
+		//UserListInterface.SetList(loadedList);
+		//List<UserInput> testList = UserListInterface.GetList();
 		 
 	}
 
@@ -65,10 +73,14 @@ public class MenuCamController : MonoBehaviour
 		userInput.userCity = inputCity.text;
 		Debug.Log ("User City = " + userInput.userCity);
 
-		userInput.markerColor = ColorSlider.currentColor;
-		Debug.Log ("User Color = " + userInput.markerColor);
 		currentMount = newMount;
 	}
+
+	public void setPreviousMount (Transform previousMount){
+
+		currentMount = previousMount;
+	}
+
 
 
 
@@ -77,11 +89,19 @@ public class MenuCamController : MonoBehaviour
 		if(PlayerPrefs.GetInt("User Index") == null){
 			PlayerPrefs.SetInt("User Index", 1);
 		}
+		userInput.markerColor = ColorSlider.currentColor;
+		Debug.Log ("User Color = " + userInput.markerColor);
+
 		userInput.userIndex = PlayerPrefs.GetInt ("User Index");
+		userInput.pictureName = "userPicture" + PlayerPrefs.GetInt ("User Index");
+		Debug.Log ("Picture Name = " + userInput.pictureName);
+
 		UserListInterface.AddUser (userInput);
+
 		PlayerPrefs.SetInt ("User Index", PlayerPrefs.GetInt ("User Index")+ 1);
-		//XMLManager.SaveUsers ();
+
 		SceneManager.LoadScene ("Take Picture");
+
 		Debug.Log ("Loading Scene: Take Picture");
 	}
 }﻿

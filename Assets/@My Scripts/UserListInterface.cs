@@ -13,15 +13,20 @@ public class UserListInterface {
 //	}
 
 	void Start (){
-		XMLManager.LoadUsers ();
-		list = UserDatabase.inputs;
+		//XMLManager.LoadUsers ();
+		//list = UserDatabase.inputs;
 	}
 	public static void InitializeList ()
 	{
+		
 		Debug.Log ("Initializing List");
-		//list = new List<UserInput> ();
-		XMLManager.LoadUsers ();
-		list = UserDatabase.inputs;
+
+		//XMLManager.LoadUsers ();
+		//list = UserDatabase.inputs;
+		if(XMLManager.ins.userDb.inputs.Count == 0 || XMLManager.ins.userDb.inputs == null){
+			list = new List<UserInput> ();	
+		}else
+		list = XMLManager.ins.userDb.inputs;
 
 //		if (true) {
 //

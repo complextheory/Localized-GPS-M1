@@ -17,10 +17,10 @@ public class MultipleLocalization : MonoBehaviour {
 
 	public LoadUserData loadUserData;
 
-	public XMLManager xmlManager;
+	//public XMLManager xmlManager;
 
 	void Awake(){
-		UserListInterface.InitializeList ();
+		//UserListInterface.InitializeList ();
 
 	}
 

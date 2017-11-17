@@ -81,7 +81,9 @@ public class HighResScreenShots : MonoBehaviour {
 			captureScreenshot = false;
 
 			// hide optional game object if set
-			if (hideGameObject != null) hideGameObject.SetActive(false);
+			if (hideGameObject != null)
+					hideGameObject.SetActive(false);
+			
 
 			// create screenshot objects if needed
 			if (renderTexture == null)

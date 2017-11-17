@@ -1,2 +1,89 @@
 <?xml version="1.0" encoding="us-ascii"?>
-<UserDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<UserDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <inputs>
+    <UserInput>
+      <userName>Nudennie</userName>
+      <userCity>New York</userCity>
+      <pictureName>userPicture41</pictureName>
+      <userIndex>41</userIndex>
+      <markerColor>
+        <r>0</r>
+        <g>1</g>
+        <b>0</b>
+        <a>1</a>
+      </markerColor>
+    </UserInput>
+    <UserInput>
+      <userName>Nudennie</userName>
+      <userCity>New York</userCity>
+      <pictureName>userPicture42</pictureName>
+      <userIndex>42</userIndex>
+      <markerColor>
+        <r>0</r>
+        <g>0</g>
+        <b>1</b>
+        <a>1</a>
+      </markerColor>
+    </UserInput>
+    <UserInput>
+      <userName>Andrew Wu</userName>
+      <userCity>Tokyo</userCity>
+      <pictureName>userPicture44</pictureName>
+      <userIndex>44</userIndex>
+      <markerColor>
+        <r>0</r>
+        <g>0</g>
+        <b>1</b>
+        <a>1</a>
+      </markerColor>
+    </UserInput>
+    <UserInput>
+      <userName>Delany</userName>
+      <userCity>Paris</userCity>
+      <pictureName>userPicture45</pictureName>
+      <userIndex>45</userIndex>
+      <markerColor>
+        <r>0</r>
+        <g>1</g>
+        <b>0</b>
+        <a>1</a>
+      </markerColor>
+    </UserInput>
+    <UserInput>
+      <userName>Nudennie</userName>
+      <userCity>Dhaka</userCity>
+      <pictureName>userPicture45</pictureName>
+      <userIndex>45</userIndex>
+      <markerColor>
+        <r>0</r>
+        <g>1</g>
+        <b>0</b>
+        <a>1</a>
+      </markerColor>
+    </UserInput>
+    <UserInput>
+      <userName>Jarvis</userName>
+      <userCity>Tulsa</userCity>
+      <pictureName>userPicture46</pictureName>
+      <userIndex>46</userIndex>
+      <markerColor>
+        <r>0</r>
+        <g>0</g>
+        <b>1</b>
+        <a>1</a>
+      </markerColor>
+    </UserInput>
+    <UserInput>
+      <userName>Andrew Wu</userName>
+      <userCity>Los Angeles</userCity>
+      <pictureName>userPicture47</pictureName>
+      <userIndex>47</userIndex>
+      <markerColor>
+        <r>0</r>
+        <g>1</g>
+        <b>0</b>
+        <a>1</a>
+      </markerColor>
+    </UserInput>
+  </inputs>
+</UserDatabase>
