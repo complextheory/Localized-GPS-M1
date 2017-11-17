@@ -377,7 +377,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 829.98145}
+  m_SizeDelta: {x: 0, y: 940.4082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &264733771
 MonoBehaviour:
@@ -628,8 +628,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 503502723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 90}
-  m_LocalScale: {x: 0.25658956, y: 0.25658956, z: 0.25658956}
+  m_LocalPosition: {x: 2, y: 1, z: 90}
+  m_LocalScale: {x: 0.34002602, y: 0.34002602, z: 0.34002602}
   m_Children:
   - {fileID: 264733770}
   - {fileID: 115161566}
@@ -1148,7 +1148,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1476133724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 2, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   captureWidth: 1920
   captureHeight: 1080
   hideGameObject: {fileID: 115161565}
-  optimizeForManyScreenshots: 1
+  optimizeForManyScreenshots: 0
   format: 2
   folder: /Users/jarvischarles/Documents/Unreal Projects/Localized GPS M1/Pics
 --- !u!1 &1516473517

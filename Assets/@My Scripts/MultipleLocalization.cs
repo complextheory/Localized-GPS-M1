@@ -25,7 +25,8 @@ public class MultipleLocalization : MonoBehaviour {
 	}
 
 	void Start (){
-
+		PlayerPrefs.SetInt (("User Index") , PlayerPrefs.GetInt ("User Index") + 1);
+		Debug.Log ("User Index now = " + PlayerPrefs.GetInt ("User Index"));
 		InstantiateMarker ();
 	}
 

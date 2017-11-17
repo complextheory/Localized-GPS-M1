@@ -21,6 +21,7 @@ public class UserListInterface {
 		
 		Debug.Log ("Initializing List");
 
+		//list = new List<UserInput>();
 		//XMLManager.LoadUsers ();
 		//list = UserDatabase.inputs;
 		if(XMLManager.ins.userDb.inputs.Count == 0 || XMLManager.ins.userDb.inputs == null){
@@ -76,6 +77,34 @@ public class UserListInterface {
 
 	public static int GetTotalUsers(){
 		return list.Count;
+	}
+
+	public static int GetUserIndex(UserInput userInput){
+		return userInput.userIndex;
+	}
+
+	public static UserInput GetCurrentUser(){
+
+		for(int i = 0; i < GetList ().Count; i++){
+
+			if (GetList () [i].userIndex == PlayerPrefs.GetInt ("User Index")) {
+				return GetList () [i];
+				break;
+			}
+		}
+		return GetList () [0];
+	}
+
+	public static int GetCurrentUserIndex(){
+
+		for(int i = 0; i < GetList ().Count; i++){
+
+			if (GetList () [i].userIndex == PlayerPrefs.GetInt ("User Index")) {
+				return GetList () [i].userIndex;
+				break;
+			}
+		}
+		return GetList () [0].userIndex;
 	}
 
 

@@ -23,15 +23,23 @@ public class MenuCamController : MonoBehaviour
 
 	void Start ()
 	{ 
+		//PlayerPrefs.SetInt ("User Index", 0);
+		if(PlayerPrefs.GetInt ("User Index") == 0){
+
+			xmlManager.SaveUsers ();
+		}
 		//if(XMLManager.ins.userDb.inputs.Count != 0){
 			xmlManager.LoadUsers();
+
 
 		//}
 		//Debug.Log ("Should Load List. Before List = " + UserListInterface.GetList ().Count);
 
 		UserListInterface.InitializeList ();
 		Debug.Log ("Should Load List. After List = " + xmlManager.userDb.inputs.Count);
-
+//		for(int i = 0; i < UserListInterface.GetList ().Count; i ++){
+//			Debug.Log (UserListInterface.GetList ()[i].pictureName);
+//		}
 		lastPosition = transform.position;
 		//loadedList = UserDatabase.inputs;
 
@@ -86,9 +94,8 @@ public class MenuCamController : MonoBehaviour
 
 	public void changeScene(){
 
-		if(PlayerPrefs.GetInt("User Index") == null){
-			PlayerPrefs.SetInt("User Index", 1);
-		}
+	
+
 		userInput.markerColor = ColorSlider.currentColor;
 		Debug.Log ("User Color = " + userInput.markerColor);
 
@@ -98,7 +105,8 @@ public class MenuCamController : MonoBehaviour
 
 		UserListInterface.AddUser (userInput);
 
-		PlayerPrefs.SetInt ("User Index", PlayerPrefs.GetInt ("User Index")+ 1);
+		PlayerPrefs.SetInt ("User Index", PlayerPrefs.GetInt ("User Index"));
+	
 
 		SceneManager.LoadScene ("Take Picture");
 

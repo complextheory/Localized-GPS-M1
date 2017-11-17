@@ -56,7 +56,7 @@ public class MarkerPositioning : MonoBehaviour {
 
 		// Add picture PNG to texture
 
-		byte[] bytes = File.ReadAllBytes (Application.dataPath + "/StreamingAssets/PNG/userPicture" + PlayerPrefs.GetInt ("User Index") - 1 + ".png");
+		byte[] bytes = File.ReadAllBytes (Application.dataPath + "/StreamingAssets/PNG/userPicture" + userIndex + ".png");
 		Texture2D thisTexture = new Texture2D(900, 900, TextureFormat.RGB24, false);
 		thisTexture.filterMode = FilterMode.Trilinear;
 		thisTexture.LoadImage (bytes);

@@ -35,7 +35,7 @@ public class XMLManager : MonoBehaviour {
 
 		// Open a new XML file
 		XmlSerializer serializer = new XmlSerializer (typeof(UserDatabase));
-		FileStream stream = new FileStream (Application.dataPath + "/StreamingAssets/XML/item_data.xml", FileMode.Create);
+		FileStream stream = new FileStream (Application.dataPath + "/StreamingAssets/XML/user_data.xml", FileMode.Create);
 		serializer.Serialize (stream, userDb);
 		stream.Close ();
 		
@@ -50,7 +50,7 @@ public class XMLManager : MonoBehaviour {
 
 
 		XmlSerializer serializer = new XmlSerializer (typeof(UserDatabase));
-		FileStream stream = new FileStream (Application.dataPath + "/StreamingAssets/XML/item_data.xml", FileMode.Open);
+		FileStream stream = new FileStream (Application.dataPath + "/StreamingAssets/XML/user_data.xml", FileMode.Open);
 		userDb = serializer.Deserialize (stream) as UserDatabase;
 		stream.Close ();
 
